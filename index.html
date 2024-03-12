@@ -86,7 +86,14 @@
                     
                 <!-- Codigo Co-Browser -->
                     <p> Para acessar o Co-Browser</p>
-                    <button type="button" id="start-cobrowse" onclick="genesysWebchat.startCobrowse()">Entre com a Chave para o Co-browse</button>
+                    <!--- <button type="button" id="start-cobrowse" onclick="genesysWebchat.startCobrowse()">Entre com a Chave para o Co-browse</button> --->
+
+                     <button type="button" id="start-cobrowse" onclick="genesysWebchat.startCobrowse('comand', 'journey.record',
+                    {
+                            eventName: 'Co-Browser'
+                    })" class="button">
+                        Entre com a Chave para o Co-browse
+                    </button>
                         <!-- Div with this id required to display security key form -->
                         <div id="cobrowse-security-form"></div>
 
