@@ -25,13 +25,36 @@
                 region: 'use1',
                 globalTraitsMapper: [
                         {
-                            "fieldName": "firstname",
-                            "traitName": "givenName"
+                          Nome: 'Flavia',
+                          Sobrenome: 'Cioti',
+                          Empresa: 'SoAresMarinhos LTDA',
+                          NIT: '123456789-1',
+                          Profissao:'CEO_EFOUse',
+                          Email:'danniel.genesys@gmail.com',
+                          Fone:'5511991426113'
                         },
-                        {
-                            "fieldName": "lastname",
-                            "traitName": "familyName"
-                        }
+                        traitsMapper:[
+                                        {
+                                        'fieldName': 'Nome',
+                                        'traitName': 'givenName'
+                                        },
+                                        {
+                                        'fieldName': 'Profissao',
+                                        'traitName': 'jobTitle'
+                                        },
+                                        {
+                                        'fieldName': 'Fone',
+                                        'traitName': 'homePhone'
+                                        },
+                                        {
+                                        'fieldName': 'Email',
+                                        'traitName': 'email'
+                                        },
+                                        {
+                                        'fieldname': 'Sobrenome',
+                                        'traitName': 'familyName'
+                                        }
+                        ]
                 ]
             });
             ac('pageview');
