@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Estudo de Caso Co-Browser e GPE" />
+        <meta name="description" content="EStudo de Caso" />
         <meta name="author" content="Danniel Cioti" />
         <meta name="country" content="Brasil" />
         
@@ -48,6 +48,7 @@
                 <div class="sidebar-heading border-bottom bg-light">Cioti Menu - Start Bootstrap</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="form.html">Formulario</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="shortcuts.html">Shortcuts</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="overview.html">Overview</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="events.html">Events</a>
@@ -86,9 +87,14 @@
                     
                 <!-- Codigo Co-Browser -->
                     <p> Para acessar o Co-Browser</p>
-                    <button type="button" id="start-cobrowse" onclick="genesysWebchat.startCobrowse()">
-                        Entre com a Chave para o Co-browseR
+                    <button type="button" id="start-cobrowse" onclick="genesysWebchat.startCobrowse('comand', 'journey.record',
+                    {
+                            eventName: 'Co-Browser'
+                    })" class="button">
+                        Entre com a Chave para o Co-browse
                     </button>
+
+                    
                         <!-- Div with this id required to display security key form -->
                         <div id="cobrowse-security-form"></div>
 

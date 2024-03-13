@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Estudo de Caso Co-Browser e GPE" />
+        <meta name="description" content="Pagina - Events" />
         <meta name="author" content="Danniel Cioti" />
         <meta name="country" content="Brasil" />
     
@@ -32,6 +32,7 @@
                 <div class="sidebar-heading border-bottom bg-light">Cioti Menu - Start Bootstrap</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.html">Inicio</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="form.html">Formulario</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="shortcuts.html">Shortcuts</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="overview.html">Overview</a>
@@ -66,7 +67,7 @@
             <!-- Page content-->
                 <div class="container-fluid">
                     <h1 class="mt-4">Conteudo do Site</h1>
-                    <p> <h3>Pagina Events </h3></p>
+                    <p><h4>Pagina Events</h4></p>
                     <p>
                         Make sure to keep all page content within the
                         <code>#page-content-wrapper</code>
@@ -74,11 +75,22 @@
                         <code>#sidebarToggle</code>
                         ID which will toggle the menu when clicked.
                     </p>
-                     <p>
+                    <p>
                         <!-- BOTAO -->
                         <button onclick="ac('record', 'product_added', {name: 'produto'})">
                             Adiciona Produto
                         </button>
+                        <button onblur ="ac('record', 'product_added', {name: 'produto'})">
+                            Salvar Produto
+                        </button>
+                        <p>
+                        <button onclick="Genesys('command', 'Journey.record', 
+                        {eventName: 'product_added'})">
+                            Buy Product 
+                        </button>
+
+
+                    </p>
                 </div>
             </div>
         </div>

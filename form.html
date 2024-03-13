@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Pagina - Overview" />
+        <meta name="description" content="Pagina - Form" />
         <meta name="author" content="Danniel Cioti" />
         <meta name="country" content="Brasil" />
     
-        <title>Cioti - Pagina Overview</title>
+        <title>Cioti - Pagina Form</title>
         
         <!-- Favicon-->
             <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -21,20 +21,34 @@
             (a[o].q=a[o].q||[]).push(arguments)},a[o].l=1*new Date();u=t.createElement(c),
             d=t.getElementsByTagName(c)[0];u.async=1;u.src=l;u.charset='utf-8';d.parentNode.insertBefore(u,d)
             })(window, document, 'script', 'https://apps.mypurecloud.com/journey/sdk/js/web/v1/ac.js', 'ac');
-            ac('init', 'c8bb9493-2b8c-415a-b7b1-44cef16960f8', { region: 'use1' });
+            ac('init', 'c8bb9493-2b8c-415a-b7b1-44cef16960f8', { 
+                region: 'use1',
+                globalTraitsMapper: [
+                        {
+                            "fieldName": "firstname",
+                            "traitName": "givenName"
+                        },
+                        {
+                            "fieldName": "lastname",
+                            "traitName": "familyName"
+                        }
+                ]
+            });
             ac('pageview');
+
         </script>
     </head>
     <body>
+
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Cioti Menu - Start Bootstrap</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.html">Inicio</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="form.html">Formulario</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="shortcuts.html">Shortcuts</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="overview.html">Overview</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="events.html">Events</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="profile.html">Profile</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="status.html">Status</a>
@@ -75,6 +89,52 @@
                         <code>#sidebarToggle</code>
                         ID which will toggle the menu when clicked.
                     </p>
+                    <p>
+
+     <!--Form 1-->
+    <h3>Get Name Form</h3>
+    <form id="get-name" data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  action="/submit-name">
+      First name:<br>
+      <input type="text" name="firstname">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+<!--Form 2-->
+    <h3>Get Account Information Form</h3>
+    <form id="get-account-information" data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  class="target-class" action="/submit-account">
+      Account No.:<br>
+      <input type="text" name="account">
+      <br>
+      Account branch:<br>
+      <input type="text" name="branch">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+<!--Form 3-->
+    <h3>Register for Newsletter Form</h3>
+    <form id="register-for-newsletter" data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  class="target-class" action="/submit-newsletter">
+      First name:<br>
+      <input type="text" name="firstname">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br><br>
+      Email address:<br>
+      <input type="text" name="email">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+
+
+                    </p>
+
+
                 </div>
             </div>
         </div>
