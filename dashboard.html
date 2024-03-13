@@ -75,6 +75,49 @@
                         <code>#sidebarToggle</code>
                         ID which will toggle the menu when clicked.
                     </p>
+                    <p>
+
+                        <button onclick="ac('identify','Journey.pageview', 
+                            {
+                                pageTitle: 'Cioti - Pagina Dashboard',
+                                pageLocation: 'custom-page-location',
+                                pageLocation: location.href,
+                                customAttributes: 
+                                {
+                                    Nome: 'Flavia',
+                                    Sobrenome: 'Cioti',
+                                    Empresa: 'SoAresMarinhos LTDA',
+                                    NIT: '123456789-1',
+                                    Profissao:'Engineer',
+                                    Email:'danniel.genesys@gmail.com',
+                                    Fone:'5511991426113'
+                                },
+                                traitsMapper:[
+                                                {
+                                                'fieldName': 'Nome',
+                                                'traitName': 'givenName'
+                                                },
+                                                {
+                                                'fieldName': 'Profissao',
+                                                'traitName': 'jobTitle'
+                                                },
+                                                {
+                                                'fieldName': 'Fone',
+                                                'traitName': 'homePhone'
+                                                },
+                                                {
+                                                'fieldName': 'Email',
+                                                'traitName': 'email'
+                                                },
+                                                {
+                                                'fieldname': 'Sobrenome',
+                                                'traitName': 'familyName'
+                                                }
+                                            ]
+                                })"> 
+                            Identificação
+                        </button>                   
+                    </p>
                 </div>
             </div>
         </div>

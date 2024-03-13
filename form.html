@@ -25,39 +25,19 @@
                 region: 'use1',
                 globalTraitsMapper: [
                         {
-                          Nome: 'Flavia',
-                          Sobrenome: 'Cioti',
-                          Empresa: 'SoAresMarinhos LTDA',
-                          NIT: '123456789-1',
-                          Profissao:'CEO_EFOUse',
-                          Email:'danniel.genesys@gmail.com',
-                          Fone:'5511991426113'
+                            "fieldName": "firstname",
+                            "traitName": "givenName"
                         },
-                        traitsMapper:[
-                                        {
-                                        'fieldName': 'Nome',
-                                        'traitName': 'givenName'
-                                        },
-                                        {
-                                        'fieldName': 'Profissao',
-                                        'traitName': 'jobTitle'
-                                        },
-                                        {
-                                        'fieldName': 'Fone',
-                                        'traitName': 'homePhone'
-                                        },
-                                        {
-                                        'fieldName': 'Email',
-                                        'traitName': 'email'
-                                        },
-                                        {
-                                        'fieldname': 'Sobrenome',
-                                        'traitName': 'familyName'
-                                        }
-                        ]
+                        {
+                            "fieldName": "lastname",
+                            "traitName": "familyName"
+                        }
                 ]
             });
             ac('pageview');
+
+            
+
 
         </script>
     </head>
@@ -118,10 +98,10 @@
     <h3>Get Name Form</h3>
     <form id="get-name" data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  action="/submit-name">
       First name:<br>
-      <input type="text" name="firstname">
+      <input type="text" name="Nome">
       <br>
       Last name:<br>
-      <input type="text" name="lastname">
+      <input type="text" name="Sobrenome">
       <br><br>
       <input type="submit" value="Submit">
     </form>
