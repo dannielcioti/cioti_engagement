@@ -37,7 +37,7 @@
                             "traitName": "email"
                         },
                         {
-                            'fieldName': 'Fone',
+                            'fieldName': 'phone',
                             'traitName': 'homePhone'
                         },
 
@@ -106,19 +106,25 @@
 
      <!--Form 1-->
     <h3>Get Name Form</h3>
-    <form id="get-name" data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  data-origID="get-name"  action="/submit-name">
-      First name:<br>
+    <form id="get-name" data-origID="get-name"  action="/submit-name">
+    First name:<br>
       <input type="text" name="firstname">
       <br>
       Last name:<br>
       <input type="text" name="lastname">
+      <br><br>
+      Email address:<br>
+      <input type="text" name="emailAddress">
+      <br><br>
+       Phone:<br>
+      <input type="text" name="phone">
       <br><br>
       <input type="submit" value="Submit">
     </form>
 
 <!--Form 2-->
     <h3>Get Account Information Form</h3>
-    <form id="get-account-information" data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  data-origID="get-account-information"  class="target-class" action="/submit-account">
+    <form id="get-account-information" data-origID="get-account-information"  class="target-class" action="/submit-account">
       Account No.:<br>
       <input type="text" name="account">
       <br>
@@ -130,7 +136,7 @@
 
 <!--Form 3-->
     <h3>Register for Newsletter Form</h3>
-    <form id="register-for-newsletter" data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  data-origID="register-for-newsletter"  class="target-class" action="/submit-newsletter">
+    <form id="register-for-newsletter" data-origID="register-for-newsletter"  class="target-class" action="/submit-newsletter">
       First name:<br>
       <input type="text" name="firstname">
       <br>
@@ -138,10 +144,10 @@
       <input type="text" name="lastname">
       <br><br>
       Email address:<br>
-      <input type="text" name="email">
+      <input type="text" name="emailAddress">
       <br><br>
        Phone:<br>
-      <input type="text" name="homePhone">
+      <input type="text" name="phone">
       <br><br>
       <input type="submit" value="Submit">
     </form>
