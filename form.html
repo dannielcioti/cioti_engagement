@@ -40,13 +40,17 @@
                             'fieldName': 'phone',
                             'traitName': 'homePhone'
                         },
+                        {
+                        'fieldName': 'jobtitles',
+                        'traitName': 'jobTitle'
+                        }
+
 
                     
                 ]
             });
             ac('pageview');
-
-            
+            ac('forms:track');        
 
 
         </script>
@@ -107,7 +111,9 @@
      <!--Form 1-->
     <h3>Get Name Form</h3>
     <form id="get-name" data-origID="get-name"  action="/submit-name">
-    First name:<br>
+     Job Title:<br>
+      <input type="text" name="jobtitles">
+      <br>First name:<br>
       <input type="text" name="firstname">
       <br>
       Last name:<br>
