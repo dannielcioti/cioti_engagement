@@ -76,20 +76,18 @@
                         ID which will toggle the menu when clicked.
                     </p>
                     <p>
-                        <!-- BOTAO -->
+                         <!-- BOTAO -->
                         <button onclick="ac('record', 'product_added', {name: 'produto'})">
                             Adiciona Produto
                         </button>
-                        <button onblur ="ac('record', 'product_added', {name: 'produto'})">
-                            Salvar Produto
+                        <button onblur="ac('record', 'product_removed', {name: 'produto'})">
+                            Remover Produto
                         </button>
                         <p>
-                        <button onclick="Genesys('command', 'Journey.record', 
-                        {eventName: 'product_added'})">
-                            Buy Product 
+                        <button onclick="ac('record', 'product_purchased', {name: 'produto'})">
+                            Finaliza Compra
                         </button>
-
-
+                            
                     </p>
                 </div>
             </div>
