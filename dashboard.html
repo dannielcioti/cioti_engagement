@@ -15,15 +15,22 @@
         <!-- Core theme CSS (includes Bootstrap)-->
             <link href="styles.css" rel="stylesheet" />
 
-        <!-- Deploy Predictive Engagement Website Snippet -->
-        <script>
-            (function(a,t,c,l,o,u,d){a['_genesysJourneySdk']=o;a[o]=a[o]||function(){
-            (a[o].q=a[o].q||[]).push(arguments)},a[o].l=1*new Date();u=t.createElement(c),
-            d=t.getElementsByTagName(c)[0];u.async=1;u.src=l;u.charset='utf-8';d.parentNode.insertBefore(u,d)
-            })(window, document, 'script', 'https://apps.mypurecloud.com/journey/sdk/js/web/v1/ac.js', 'ac');
-            ac('init', 'c8bb9493-2b8c-415a-b7b1-44cef16960f8', { region: 'use1' });
-            ac('pageview');
-        </script>
+       <!-- Deploy Message Snippet -->
+       <script type="text/javascript" charset="utf-8">
+        (function (g, e, n, es, ys) {
+          g['_genesysJs'] = e;
+          g[e] = g[e] || function () {
+            (g[e].q = g[e].q || []).push(arguments)
+          };
+          g[e].t = 1 * new Date();
+          g[e].c = es;
+          ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+        })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+          environment: 'use1',
+          deploymentId: 'f520adcf-eacd-416e-b4ba-06fcd663c119'
+        });
+      </script>
+
     </head>
     <body>
         <div class="d-flex" id="wrapper">
@@ -77,46 +84,9 @@
                     </p>
                     <p>
 
-                        <button onclick="ac('identify','Journey.pageview', 
-                            {
-                                pageTitle: 'Cioti - Pagina Dashboard',
-                                pageLocation: 'custom-page-location',
-                                pageLocation: location.href,
-                                customAttributes: 
-                                {
-                                    Nome: 'Flavia',
-                                    Sobrenome: 'Cioti',
-                                    Empresa: 'SoAresMarinhos LTDA',
-                                    NIT: '123456789-1',
-                                    Profissao:'Engineer',
-                                    Email:'danniel.genesys@gmail.com',
-                                    Fone:'5511991426113'
-                                },
-                                traitsMapper:[
-                                                {
-                                                'fieldName': 'Nome',
-                                                'traitName': 'givenName'
-                                                },
-                                                {
-                                                'fieldName': 'Profissao',
-                                                'traitName': 'jobTitle'
-                                                },
-                                                {
-                                                'fieldName': 'Fone',
-                                                'traitName': 'homePhone'
-                                                },
-                                                {
-                                                'fieldName': 'Email',
-                                                'traitName': 'email'
-                                                },
-                                                {
-                                                'fieldname': 'Sobrenome',
-                                                'traitName': 'familyName'
-                                                }
-                                            ]
-                                })"> 
-                            Identificação
-                        </button>                   
+                        <button onclick='Genesys("command", "Journey.record", { eventName: "product_removed", customAttributes: {name: produto}})'>
+                            Remove Produto
+                        </button>                
                     </p>
                 </div>
             </div>

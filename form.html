@@ -15,40 +15,22 @@
         <!-- Core theme CSS (includes Bootstrap)-->
             <link href="styles.css" rel="stylesheet" />
 
-        <!-- Deploy Predictive Engagement Website Snippet -->
-        <script>
-            (function(a,t,c,l,o,u,d){a['_genesysJourneySdk']=o;a[o]=a[o]||function(){
-            (a[o].q=a[o].q||[]).push(arguments)},a[o].l=1*new Date();u=t.createElement(c),
-            d=t.getElementsByTagName(c)[0];u.async=1;u.src=l;u.charset='utf-8';d.parentNode.insertBefore(u,d)
-            })(window, document, 'script', 'https://apps.mypurecloud.com/journey/sdk/js/web/v1/ac.js', 'ac');
-            ac('init', 'c8bb9493-2b8c-415a-b7b1-44cef16960f8', { 
-                region: 'use1',
-                globalTraitsMapper: [
-                        {
-                            "fieldName": "firstname",
-                            "traitName": "givenName"
-                        },
-                        {
-                            "fieldName": "lastname",
-                            "traitName": "familyName"
-                        },
-                        {
-                            "fieldName": "emailAddress",
-                            "traitName": "email"
-                        },
-                        {
-                            'fieldName': 'phone',
-                            'traitName': 'homePhone'
-                        },
-                        {
-                        'fieldName': 'jobtitles',
-                        'traitName': 'jobTitle'
-                        }
-                ]
+        <!-- Deploy Message Snippet -->
+        <script type="text/javascript" charset="utf-8">
+            (function (g, e, n, es, ys) {
+              g['_genesysJs'] = e;
+              g[e] = g[e] || function () {
+                (g[e].q = g[e].q || []).push(arguments)
+              };
+              g[e].t = 1 * new Date();
+              g[e].c = es;
+              ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+            })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+              environment: 'use1',
+              deploymentId: 'f520adcf-eacd-416e-b4ba-06fcd663c119'
             });
-            ac('pageview');
-            ac('forms:track');        
-        </script>
+          </script>
+        
     </head>
     <body>
 
@@ -119,6 +101,50 @@
       <input type="text" name="emailAddress">
       <br>
       Phone:<br>
+      <input type="text" name="phone">
+      <br><br>
+      <input type="submit" value="Submit" onclick='Genesys("command", "Journey.formsTrack", {
+                                                    selector: "#registration-form",
+                                                    formName: "user registration",
+                                                    captureFormDataOnAbandon: true,
+                                                    customAttributes: { isVip: true },
+                                                    traitsMapper: [
+                                                    { fieldName: "firstName", traitName: "givenName" },
+                                                    { fieldName: "lastName", traitName: "familyName" },
+                                                    { fieldName: "jobtitles", traitName: "jobTitle" },
+                                                    { fieldName: "emailAddress", traitName: "email" },
+                                                    { fieldName: "phone", traitName: "homePhone" }
+                                                    ]
+                                                })';>
+    </form>
+
+<!--Form 2-->
+    <h3>Get Account Information Form</h3>
+    <form id="get-account-information" data-origID="get-account-information"  class="target-class" action="/submit-account">
+      Account No.:<br>
+      <input type="text" name="account">
+      <br>
+      Account branch:<br>
+      <input type="text" name="branch">
+      <br><br>
+      <input type="submit" value="Submit">
+
+
+    </form>
+
+<!--Form 3-->
+    <h3>Register for Newsletter Form</h3>
+    <form id="register-for-newsletter" data-origID="register-for-newsletter"  class="target-class" action="/submit-newsletter">
+      First name:<br>
+      <input type="text" name="firstname">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br><br>
+      Email address:<br>
+      <input type="text" name="emailAddress">
+      <br><br>
+       Phone:<br>
       <input type="text" name="phone">
       <br><br>
       <input type="submit" value="Submit">
