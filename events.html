@@ -84,18 +84,17 @@
                     </p>
                     <p>
                         <!-- BOTAO -->
-                        <button onclick="ac('record', 'product_added', {name: 'produto'})">
+                         <button onclick='Genesys("command", "Journey.record", { eventName: "product_added", customAttributes: {name:"produto"}})'>
                             Adiciona Produto
                         </button>
-                        <button onblur="ac('record', 'product_removed', {name: 'produto'})">
-                            Remover Produto
+                    </p><p> 
+                        <button onclick='Genesys("command", "Journey.record", { eventName: "product_removed", customAttributes: {name:"produto"}})'>
+                            Adiciona Produto
                         </button>
-                        <p>
-                        <button onclick="ac('record', 'product_purchased', {name: 'produto'})">
-                            Finaliza Compra
+                    </p><p>
+                        <button onclick='Genesys("command", "Journey.record", { eventName: "product_purchased", customAttributes: {name:"produto"}})'>
+                            Adiciona Produto
                         </button>
-
-
                     </p>
                 </div>
             </div>
