@@ -105,18 +105,32 @@
       <br><br>
       <input type="submit" value="Submit" onclick='Genesys("command", "Journey.formsTrack", {
                                                     selector: "#registration-form",
-                                                    formName: "user registration",
+                                                    formName: "get-name",
                                                     captureFormDataOnAbandon: true,
                                                     customAttributes: { isVip: true },
                                                     traitsMapper: [
                                                     { fieldName: "firstName", traitName: "givenName" },
                                                     { fieldName: "lastName", traitName: "familyName" },
-                                                    { fieldName: "jobtitles", traitName: "jobTitle" },
+                                                    { fieldName: "jobName", traitName: "jobTitle" },
                                                     { fieldName: "emailAddress", traitName: "email" },
-                                                    { fieldName: "phone", traitName: "homePhone" }
+                                                    { fieldName: "phoneWork", traitName: "workPhone"}
                                                     ]
-                                                })';>
+                                                })'>
     </form>
+     <button onclick='Genesys("command", "Journey.formsTrack", {
+                                                    selector: "#registration-form",
+                                                    formName: "get-name",
+                                                    captureFormDataOnAbandon: true,
+                                                    customAttributes: { isVip: true },
+                                                    traitsMapper: [
+                                                    { fieldName: "firstName", traitName: "givenName" },
+                                                    { fieldName: "lastName", traitName: "familyName" },
+                                                    { fieldName: "jobName", traitName: "jobTitle" },
+                                                    { fieldName: "emailAddress", traitName: "email" },
+                                                    { fieldName: "phoneWork", traitName: "workPhone"}
+                                                    ]
+                                                })'> SALVA
+        </button>
 
 <!--Form 2-->
     <h3>Get Account Information Form</h3>
