@@ -29,9 +29,7 @@
         environment: 'use1',
         deploymentId: 'f520adcf-eacd-416e-b4ba-06fcd663c119'
       });
-    </script>
-  </head>
-  <body onload='Genesys("command", "Journey.formsTrack", {
+       Genesys("command", "Journey.formsTrack", {
                                                     selector: "#get-name",
                                                     formName: "Cadastro de Pessoas",
                                                     captureFormDataOnAbandon: true,
@@ -43,7 +41,10 @@
                                                     { fieldName: "emailAddress", traitName: "email" },
                                                     { fieldName: "phoneWork", traitName: "workPhone"}
                                                     ]
-    })'>
+    })
+    </script>
+  </head>
+  <body>
     <div class="d-flex" id="wrapper">
       <!-- Sidebar-->
       <div class="border-end bg-white" id="sidebar-wrapper">
