@@ -29,19 +29,6 @@
         environment: 'use1',
         deploymentId: 'f520adcf-eacd-416e-b4ba-06fcd663c119'
       });
-       Genesys("command", "Journey.formsTrack", {
-                                                    selector: "#get-name",
-                                                    formName: "Cadastro de Pessoas",
-                                                    captureFormDataOnAbandon: true,
-                                                    customAttributes: { name: "givenName" },
-                                                    traitsMapper: [
-                                                    { fieldName: "firstName", traitName: "givenName" },
-                                                    { fieldName: "lastName", traitName: "familyName" },
-                                                    { fieldName: "jobName", traitName: "jobTitle" },
-                                                    { fieldName: "emailAddress", traitName: "email" },
-                                                    { fieldName: "phoneWork", traitName: "workPhone"}
-                                                    ]
-    })
     </script>
   </head>
   <body>
@@ -91,7 +78,7 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-          <h1 class="mt-4">FORMULARIO-2</h1>
+          <h1 class="mt-4">FORMULARIO</h1>
           <p>Teste simples com codigo CSS Declarado</p>
           <p> Make sure to keep all page content within the <code>#page-content-wrapper</code> . The top navbar is optional, and just for demonstration. Just create an element with the <code>#sidebarToggle</code> ID which will toggle the menu when clicked. </p>
           <p>
