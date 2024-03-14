@@ -74,7 +74,7 @@
                 </nav>
             <!-- Page content-->
                 <div class="container-fluid">
-                    <h1 class="mt-4">Conteudo do Site</h1>
+                    <h1 class="mt-4">FORMULARIO</h1>
                     <p>Teste simples com codigo CSS Declarado</p>
                     <p>
                         Make sure to keep all page content within the
@@ -87,25 +87,9 @@
 
      <!--Form 1-->
     <h3>Get Name Form</h3>
-    <form id="get-name" data-origID="get-name"  action="/submit-name">
-      Job Title:<br>
-      <input type="text" name="jobtitles">
-      <br>
-      First name:<br>
-      <input type="text" name="firstname">
-      <br>
-      Last name:<br>
-      <input type="text" name="lastname">
-      <br>
-      Email address:<br>
-      <input type="text" name="emailAddress">
-      <br>
-      Phone:<br>
-      <input type="text" name="phone">
-      <br><br>
-      <input type="submit" value="Submit" onclick='Genesys("command", "Journey.formsTrack", {
-                                                    selector: "#registration-form",
-                                                    formName: "get-name",
+    <form id="get-name" data-origID="get-name"  action="/submit-name" onsubmit='Genesys("command", "Journey.formsTrack", {
+                                                    selector: "#get-name",
+                                                    formName: "Cadastro de Pessoas",
                                                     captureFormDataOnAbandon: true,
                                                     customAttributes: { isVip: true },
                                                     traitsMapper: [
@@ -116,26 +100,24 @@
                                                     { fieldName: "phoneWork", traitName: "workPhone"}
                                                     ]
                                                 })'>
+      Job Title:<br>
+      <input type="text" name="jobName">
+      <br>
+      First name:<br>
+      <input type="text" name="firstName">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastName">
+      <br>
+      Email address:<br>
+      <input type="text" name="emailAddress">
+      <br>
+      Phone:<br>
+      <input type="text" name="phoneWork">
+      <br><br>
+      <input type="submit" value="Submit" >
     </form>
-     <button onclick='Genesys("command", "Journey.formsTrack", {
-                                                    selector: "#registration-form",
-                                                    formName: "get-name",
-                                                    captureFormDataOnAbandon: true,
-                                                    customAttributes: { isVip: true },
-                                                    traitsMapper: [
-                                                    { fieldName: "firstName", traitName: "givenName" },
-                                                    { fieldName: "lastName", traitName: "familyName" },
-                                                    { fieldName: "jobName", traitName: "jobTitle" },
-                                                    { fieldName: "emailAddress", traitName: "email" },
-                                                    { fieldName: "phoneWork", traitName: "workPhone"}
-                                                    ]
-                                                })'> SALVA
-        </button>
-  <button onclick='Genesys("command", "Journey.record", { eventName: "product_added", customAttributes: {name:"produto"}})'>
-                            Adiciona Produto
-                        </button>
-
-        </p>
+    </p>
               </div>
             </div>
         </div>
