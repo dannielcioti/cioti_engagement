@@ -31,7 +31,13 @@
         });
     </script>
     
-        
+    <!-- Start a função Journey! -->
+    <script>
+      Genesys("subscribe", "Journey.ready", function() {
+        Genesys("command", "Journey.trackIdleEvents", {
+            idleEvents: [{ idleAfterSeconds: 15, eventName: "idle_15_segundos"}]
+        })});
+           
     </head>
     <body>
         <div class="d-flex" id="wrapper">
@@ -75,7 +81,9 @@
             <!-- Page content-->
                 <div class="container-fluid">
                     <h1 class="mt-4">Conteudo do Site</h1>
-                    <p>Teste simples com codigo CSS Declarado</p>
+                    <p>
+                        <h3>PAGINA OVERVIEW</h3>
+                    </p>
                     <p>
                         Make sure to keep all page content within the
                         <code>#page-content-wrapper</code>
