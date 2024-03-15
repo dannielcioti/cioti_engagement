@@ -35,7 +35,7 @@
     <script>
       Genesys("subscribe", "Journey.ready", function() {
         Genesys("command", "Journey.trackIdleEvents", {
-            idleEvents: [{ idleAfterSeconds: 15, eventName: "idle_15_segundos"}]
+            idleEvents: [{ idleAfterSeconds: 15, eventName: "idle_for_10_sec"}]
         })});
     </script>
     </head>
