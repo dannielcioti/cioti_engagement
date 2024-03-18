@@ -56,13 +56,7 @@
           )
         </script>
 
-        <!-- Start a função Journey para ociosidade na pagina em 30s -->
-          <script>
-            Genesys("subscribe", "Journey.ready", function() {
-              Genesys("command", "Journey.trackIdleEvents", {
-                  idleEvents: [{ idleAfterSeconds: 30, eventName: "idle_30_seg"}]
-              })});
-          </script>
+
 
   </head>
   <body>

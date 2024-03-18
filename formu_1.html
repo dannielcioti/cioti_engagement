@@ -55,10 +55,6 @@
                         {fieldName: "phoneMobile",traitName: "cellPhone"},
                         {fieldName: "emailAddress",traitName: "email"}
                         ]
-                    })
-
-                    Genesys("command", "Journey.trackIdleEvents", {
-                        idleEvents: [{ idleAfterSeconds: 30, eventName: "idle_30_seg"}]
                     })  
                 }
             )
