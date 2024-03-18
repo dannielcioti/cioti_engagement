@@ -19,10 +19,10 @@
 
     <!-- Deploy Message Snippet -->
         <script type="text/javascript" charset="utf-8">
-        (function(g, e, n, es, ys) {
+          (function(g, e, n, es, ys) {
             g['_genesysJs'] = e;
             g[e] = g[e] || function() {
-            (g[e].q = g[e].q || []).push(arguments)
+              (g[e].q = g[e].q || []).push(arguments)
             };
             g[e].t = 1 * new Date();
             g[e].c = es;
@@ -31,29 +31,29 @@
             ys.src = n;
             ys.charset = 'utf-8';
             document.head.appendChild(ys);
-        })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+          })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
             environment: 'use1',
             deploymentId: 'f520adcf-eacd-416e-b4ba-06fcd663c119'
-        });
+          });
         </script>
         <script>
-        Genesys("subscribe", "Journey.ready", function() {
-            Genesys("command", "Journey.formsTrack", {
-                selector: "#get-name",
-                formName: "Cadastro de Pessoas",
-                captureFormDataOnAbandon: true,
-                captureFormOnSubmit: true,
-                customAttributes: {
-                name: "Cadastro"
-                },
-                traitsMapper: [
-                {fieldName: "firstName",    traitName: "givenName"},
-                {fieldName: "lastName",     traitName: "familyName"},
-                {fieldName: "jobName",      traitName: "jobTitle"}
-                ]
-            })
-            }
-        )
+          Genesys("subscribe", "Journey.ready", function() {
+              Genesys("command", "Journey.formsTrack", {
+                  selector: "#get-name",
+                  formName: "Cadastro de Pessoas",
+                  captureFormDataOnAbandon: true,
+                  captureFormOnSubmit: true,
+                  customAttributes: {
+                  name: "Cadastro"
+                  },
+                  traitsMapper: [
+                  {fieldName: "firstName",    traitName: "givenName"},
+                  {fieldName: "lastName",     traitName: "familyName"},
+                  {fieldName: "jobName",      traitName: "jobTitle"}
+                  ]
+              })
+              }
+          )
         </script>
 
         <!-- Start a função Journey para ociosidade na pagina em 30s -->

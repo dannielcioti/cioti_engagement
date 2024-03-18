@@ -19,10 +19,10 @@
 
     <!-- Deploy Message Snippet -->
         <script type="text/javascript" charset="utf-8">
-        (function(g, e, n, es, ys) {
+          (function(g, e, n, es, ys) {
             g['_genesysJs'] = e;
             g[e] = g[e] || function() {
-            (g[e].q = g[e].q || []).push(arguments)
+              (g[e].q = g[e].q || []).push(arguments)
             };
             g[e].t = 1 * new Date();
             g[e].c = es;
@@ -31,10 +31,10 @@
             ys.src = n;
             ys.charset = 'utf-8';
             document.head.appendChild(ys);
-        })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+          })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
             environment: 'use1',
             deploymentId: 'f520adcf-eacd-416e-b4ba-06fcd663c119'
-        });
+          });
         </script>
 
         <script>
@@ -63,14 +63,6 @@
                 }
             )
         </script>
-
- <!-- Start a função Journey para ociosidade na pagina em 30s -->
- <script>
-    Genesys("subscribe", "Journey.ready", function() {
-      Genesys("command", "Journey.trackIdleEvents", {
-          idleEvents: [{ idleAfterSeconds: 30, eventName: "idle_30_seg"}]
-      })});
-  </script>
 
   </head>
   <body>
