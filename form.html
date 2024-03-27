@@ -22,7 +22,7 @@
 
     <!-- Mapa e track de FORMs -->
     <script>
-      Genesys("subscribe", "Journey.ready", function() {
+    
           Genesys("command", "Journey.formsTrack", {
             selector: "#get-name",
             formName: "Cadastro de Pessoas",
@@ -41,8 +41,7 @@
               {fieldName: "phoneMobile",  traitName: "cellPhone"}
             ]
           })
-        }
-      )
+
     </script>
     
   </head>
@@ -98,7 +97,7 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-          <h1 class="mt-4">FORMULARIO</h1>
+          <h1 class="mt-4"><b>FORMULARIO</b></h1>
           <p>Teste simples com codigo CSS Declarado</p>
           <p> Make sure to keep all page content within the <code>#page-content-wrapper</code> . The top navbar is optional, and just for demonstration. Just create an element with the <code>#sidebarToggle</code> ID which will toggle the menu when clicked. </p>
           <p>
