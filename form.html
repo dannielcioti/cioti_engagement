@@ -20,6 +20,30 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="styles.css" rel="stylesheet" />
+
+    <!-- Mapa e track de FORMs -->
+     <script>
+      Genesys("subscribe", "Journey.ready", function() {
+          Genesys("command", "Journey.formsTrack", {
+            selector: "#get-name",
+            formName: "Cadastro de Pessoas",
+            captureFormDataOnAbandon: true,
+            customAttributes: {
+              name: "Cadastro",
+              comment: "Isso eh Otimo",
+              section: "Suporte"
+            },
+            traitsMapper: [
+              {fieldName: "firstName",    traitName: "givenName"},
+              {fieldName: "lastName",     traitName: "familyName"},
+              {fieldName: "jobName",      traitName: "jobTitle"},
+              {fieldName: "emailAddress", traitName: "email"},
+              {fieldName: "phoneWork",    traitName: "workPhone"},
+              {fieldName: "phoneMobile",  traitName: "cellPhone"}
+            ]
+          })
+        }
+      )
     
   </head>
   <body>
