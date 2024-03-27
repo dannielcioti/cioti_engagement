@@ -21,7 +21,7 @@
     <link href="styles.css" rel="stylesheet" />
 
     <!-- Mapa e track de FORMs -->
-     <script>
+    <script>
       Genesys("subscribe", "Journey.ready", function() {
           Genesys("command", "Journey.formsTrack", {
             selector: "#get-name",
@@ -43,6 +43,7 @@
           })
         }
       )
+    </script>
     
   </head>
   <body>
@@ -103,7 +104,7 @@
           <p>
             <!--Form 1-->
           <h3>Get Name Form</h3>
-          <form id="get-name" data-origID="get-name" action="https://dannielcioti.github.io/cioti_engagement/form.html"> Job Title: <br>
+          <form id="get-name" data-origID="get-name" action="/cioti_engagement/form.html"> Job Title: <br>
             <input type="text" name="jobName">
             <br> First name: <br>
             <input type="text" name="firstName">
