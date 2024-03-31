@@ -24,10 +24,18 @@
         
         <!-- Core theme CSS (includes Bootstrap)-->
             <link href="styles.css" rel="stylesheet" />
-
-        <script>
-            Genesys("command", "Journey.trackIdleEvents", {idleEvents: [{ idleAfterSeconds: 6, eventName: "idle_06_seg"}]})
-        </script>
+        
+        <!-- GPE: Oferece chat apos 6s -->
+            <script>
+                Genesys("subscribe", "Journey.ready", function() {
+                    Genesys("command", "Journey.trackIdleEvents", {
+                        idleEvents: [{ 
+                            idleAfterSeconds: 6, 
+                            eventName: "idle_06_seg",
+                            customAttributes:{OfereceChat:"SIM"}
+                        ]})
+                    })
+            </script>
                 
     </head>
     <body>
