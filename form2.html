@@ -33,6 +33,8 @@
               section: "Suporte"
             },
             traitsMapper: [
+              {fieldName: "userid",    traitName: "userID"},
+              {fieldName: "trial",    traitName: "isTrial"},
               {fieldName: "firstName",    traitName: "givenName"},
               {fieldName: "lastName",     traitName: "familyName"},
               {fieldName: "jobName",      traitName: "jobTitle"},
@@ -104,9 +106,9 @@
             <!--Form 1-->
           <h3>Get Name Form</h3>
           <form id="get-name" data-origID="get-name" action="/cioti_engagement/form2.html"> User ID: <br>
-            <input type="text" name="userid">
+            <input type="text" name="userID">
             <br> Trial: <br>
-            <input type="text" name="istrial">
+            <input type="text" name="trial">
             <br> First name: <br>
             <input type="text" name="firstName">
             <br> Last name: <br>
