@@ -95,10 +95,14 @@
                         ID which will toggle the menu when clicked.
                     </p>
                     <p>
-                       <button onclick='Genesys("command", "Journey.record", { eventName: "product_added", customAttributes: {name:"produto"}})'>
+                       <button onmouseout='Genesys("command", "Journey.record", { eventName: "product_refused", customAttributes: {name:"produto desistencia"}})' onclick='Genesys("command", "Journey.record", { eventName: "product_added", customAttributes: {name:"produto"}})'>
                             Adiciona Produto
                         </button>
                     </p>
+                    <p></p>
+                    <button onclick='Genesys("command", "Journey.record", { eventName: "product_removed", customAttributes: {name:"produto"}})'>
+                        Remover Produto
+                    </button>
 
                         
                     </p>
