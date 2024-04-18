@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KFFWHLWQ');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="EStudo de Caso" />
+    <meta name="author" content="Danniel Cioti" />
+    <meta name="country" content="Brasil" />
+    
+        <title>Cioti - Pagina Pesquisa</title>
+            
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        
+        <script type="text/javascript" charset="utf-8">
+            Genesys("subscribe", "Messenger.opened", function () {
+                Genesys("command", "Database.update", {
+                    messaging: {
+                    customAttributes: {
+                        cioti_attri_nome: document.getElementById('firstname').value,
+                        cioti_attri_sobrenome: document.getElementById('lastname').value,
+                        cioti_attri_assunto: "Super Comando",
+                        cioti_attri_telefone: document.getElementById('phoneuser').value,
+                        cioti_attri_email: document.getElementById('email').value
+                    }}
+                });
+            });
+        </script>       
+</head>
+<body>
+    <h1>Dados para CHAT com Web Message</h1>
+    <form name="message">
+        <input type="text" name="firstname" id="firstname" placeholder="Digite seu Primeiro Nome">
+        <input type="text" name="lastname" id="lastname" placeholder="Digite seu Segundo Nome" >
+        <input type="text" name="phoneuser" id="phoneuser" placeholder="Digite seu Telefone" >
+        <input type="text" name="email" id="email" placeholder="Digite seu E-mail">
+        <br>
+        <button type="button" id="custom-launcher" onclick="toggleMessenger()">Custom Launcher Button</button>
+    </form>
+
+    <script type="text/javascript">
+        const customLauncher = document.getElementById('custom-launcher'); // Custom launcher button
+        let bMessengerOpened = false; // Initial status of Messenger: closed
+  
+        // #1 Subscribe to the Messenger.ready event - Show custom launcher button when Messenger is ready
+        Genesys(
+          'subscribe',
+          'Messenger.ready',
+          (e) => (customLauncher.style.display = 'block')
+        );
+  
+        // #2 Subscribe to the Messenger.opened event - Update the status of Messenger as opened
+        Genesys('subscribe', 'Messenger.opened', (e) => {
+          bMessengerOpened = true;
+          /*
+          Update your custom launcher button here indicating a Messenger opened state i.e. show a KeyboardArrowDownIcon
+          or hide your custom launcher button if you prefer not to indicate that Messenger is opened
+        */
+          customLauncher.style.display = 'none';
+          console.log(e);
+        });
+  
+        // #3 Subscribe to the Messenger.closed event - Update the status of Messenger as closed
+        Genesys('subscribe', 'Messenger.closed', (e) => {
+          bMessengerOpened = false;
+          /*
+          Update your custom launcher button here indicating a Messenger closed state i.e. show a MessageIcon
+          or show your custom launcher button if you prefer to indicate that Messenger is closed
+        */
+          customLauncher.style.display = 'block';
+          console.log(e);
+        });
+  
+        const openMessenger = () => {
+          console.log('Opening messenger...');
+          Genesys('command', 'Messenger.open');
+        };
+        const closeMessenger = () => {
+          console.log('Closing messenger...');
+          Genesys('command', 'Messenger.close');
+        };
+  
+        const toggleMessenger = () => {
+          bMessengerOpened ? closeMessenger() : openMessenger();
+        };
+      </script>
+
+</body>
+</html>
