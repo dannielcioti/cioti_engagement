@@ -64,30 +64,35 @@
           <a class="list-group-item list-group-item-action list-group-item-light p-3" href="profile.html">Profile</a>
           <a class="list-group-item list-group-item-action list-group-item-light p-3" href="status.html">Status</a>
           <p></p><p></p><br>
-                    <b>Pesquisa no Site</b>
-                        <input type="text" id="query" placeholder="Digite sua pesquisa aqui">
-                        <button onclick="pesquisarNoSite()">Pesquisar</button>
-                        <div id="resultado"></div>
+          <b>Pesquisa no Site</b>
+              <form action="https://dannielcioti.github.io/cioti_engagement/pesquisa.html" method="get">
+                  <input type="search" name="q" placeholder="Pesquisar no site">
+                  <button type="submit">Pesquisar 1</button>
+              </form>
+          <br><br>
+              <input type="text" id="query" placeholder="Digite sua pesquisa aqui">
+              <button onclick="pesquisarNoSite()">Pesquisar 2</button>
+              <div id="resultado"></div>
 
-                        <script>
-                            function pesquisarNoSite() {
-                                var query = document.getElementById('query').value;
-                                var urlDoSite = 'https://dannielcioti.github.io/cioti_engagement/index.html';
+              <script>
+                  function pesquisarNoSite() {
+                      var query = document.getElementById('query').value;
+                      var urlDoSite = 'https://dannielcioti.github.io/cioti_engagement/';
 
-                                fetch(urlDoSite)
-                                    .then(response => response.text())
-                                    .then(textoDoSite => {
-                                        var resultado = document.getElementById('resultado');
+                      fetch(urlDoSite)
+                          .then(response => response.text())
+                          .then(textoDoSite => {
+                              var resultado = document.getElementById('resultado');
 
-                                        if (textoDoSite.includes(query)) {
-                                            resultado.textContent = 'A query foi encontrada no site!';
-                                        } else {
-                                            resultado.textContent = 'A query não foi encontrada no site.';
-                                        }
-                                    })
-                                    .catch(error => console.error('Ocorreu um erro ao buscar no site:', error));
-                            }
-                        </script>
+                              if (textoDoSite.includes(query)) {
+                                  resultado.textContent = 'A query foi encontrada no site!';
+                              } else {
+                                  resultado.textContent = 'A query não foi encontrada no site.';
+                              }
+                          })
+                          .catch(error => console.error('Ocorreu um erro ao buscar no site:', error));
+                  }
+              </script>
         </div>
       </div>
       <!-- Page content wrapper-->
