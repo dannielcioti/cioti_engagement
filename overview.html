@@ -24,6 +24,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
             <link href="styles.css" rel="stylesheet" />
 
+        <!-- CSS para pesquisa 1 -->
+        <link href="formPesquisa.css" rel="stylesheet" />            
+
+
     </head>
     <body>
 <!-- Google Tag Manager (noscript) -->
@@ -45,29 +49,10 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="status.html">Status</a>
                     <p></p><p></p><br>
                     <b>Pesquisa no Site</b>
-                        <input type="text" id="query" placeholder="Digite sua pesquisa aqui">
-                        <button onclick="pesquisarNoSite()">Pesquisar</button>
-                        <div id="resultado"></div>
-
-                        <script>
-                            function pesquisarNoSite() {
-                                var query = document.getElementById('query').value;
-                                var urlDoSite = 'https://dannielcioti.github.io/cioti_engagement/index.html';
-
-                                fetch(urlDoSite)
-                                    .then(response => response.text())
-                                    .then(textoDoSite => {
-                                        var resultado = document.getElementById('resultado');
-
-                                        if (textoDoSite.includes(query)) {
-                                            resultado.textContent = 'A query foi encontrada no site!';
-                                        } else {
-                                            resultado.textContent = 'A query não foi encontrada no site.';
-                                        }
-                                    })
-                                    .catch(error => console.error('Ocorreu um erro ao buscar no site:', error));
-                            }
-                        </script>
+                        <form action="https://dannielcioti.github.io/cioti_engagement/pesquisa.html" method="get">
+                            <input type="search" name="q" placeholder="Pesquisar no site">
+                            <button type="submit">Pesquisar</button>
+                        </form>
                 </div>
             </div>
             <!-- Page content wrapper-->
