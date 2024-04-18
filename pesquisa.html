@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -11,17 +10,23 @@
     <!-- End Google Tag Manager -->
     
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="EStudo de Caso" />
-    <meta name="author" content="Danniel Cioti" />
-    <meta name="country" content="Brasil" />
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="EStudo de Caso" />
+        <meta name="author" content="Danniel Cioti" />
+        <meta name="country" content="Brasil" />
+        
         <title>Cioti - Pagina Pesquisa</title>
-            
+        
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+
+        <!-- CSS para pesquisa 1 -->
+        <link href="formPesquisa.css" rel="stylesheet" />
+
+        <!-- Atributos para enviar com Web Message -->
         <script type="text/javascript" charset="utf-8">
             Genesys("subscribe", "Messenger.opened", function () {
                 Genesys("command", "Database.update", {
@@ -35,65 +40,131 @@
                     }}
                 });
             });
-        </script>       
-</head>
-<body>
-    <h1>Dados para CHAT com Web Message</h1>
-    <form name="message">
-        <input type="text" name="firstname" id="firstname" placeholder="Digite seu Primeiro Nome">
-        <input type="text" name="lastname" id="lastname" placeholder="Digite seu Segundo Nome" >
-        <input type="text" name="phoneuser" id="phoneuser" placeholder="Digite seu Telefone" >
-        <input type="text" name="email" id="email" placeholder="Digite seu E-mail">
-        <br>
-        <button type="button" id="custom-launcher" onclick="toggleMessenger()">Custom Launcher Button</button>
-    </form>
+        </script> 
 
-    <script type="text/javascript">
-        const customLauncher = document.getElementById('custom-launcher'); // Custom launcher button
-        let bMessengerOpened = false; // Initial status of Messenger: closed
-  
-        // #1 Subscribe to the Messenger.ready event - Show custom launcher button when Messenger is ready
-        Genesys(
-          'subscribe',
-          'Messenger.ready',
-          (e) => (customLauncher.style.display = 'block')
-        );
-  
-        // #2 Subscribe to the Messenger.opened event - Update the status of Messenger as opened
-        Genesys('subscribe', 'Messenger.opened', (e) => {
-          bMessengerOpened = true;
-          /*
-          Update your custom launcher button here indicating a Messenger opened state i.e. show a KeyboardArrowDownIcon
-          or hide your custom launcher button if you prefer not to indicate that Messenger is opened
-        */
-          customLauncher.style.display = 'none';
-          console.log(e);
-        });
-  
-        // #3 Subscribe to the Messenger.closed event - Update the status of Messenger as closed
-        Genesys('subscribe', 'Messenger.closed', (e) => {
-          bMessengerOpened = false;
-          /*
-          Update your custom launcher button here indicating a Messenger closed state i.e. show a MessageIcon
-          or show your custom launcher button if you prefer to indicate that Messenger is closed
-        */
-          customLauncher.style.display = 'block';
-          console.log(e);
-        });
-  
-        const openMessenger = () => {
-          console.log('Opening messenger...');
-          Genesys('command', 'Messenger.open');
-        };
-        const closeMessenger = () => {
-          console.log('Closing messenger...');
-          Genesys('command', 'Messenger.close');
-        };
-  
-        const toggleMessenger = () => {
-          bMessengerOpened ? closeMessenger() : openMessenger();
-        };
-      </script>
+    </head>
+    <body>
 
-</body>
+    <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFFWHLWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Cioti Menu - Start Bootstrap</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="form.html">Formulario</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="shortcuts.html">Shortcuts</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="overview.html">Overview</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="events.html">Events</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="profile.html">Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="status.html">Status</a>
+                    <p></p><p></p><br>
+                    <b>Pesquisa no Site</b>
+                        <form action="https://dannielcioti.github.io/cioti_engagement/pesquisa.html" method="get">
+                            <input type="search" name="q" placeholder="Pesquisar no site">
+                            <button type="submit">Pesquisar</button>
+                        </form>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#!">Action</a>
+                                        <a class="dropdown-item" href="#!">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#!">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">Conteudo do Site</h1>
+                    <p>Teste simples com codigo CSS Declarado</p>
+                    <p> Make sure to keep all page content within the <code>#page-content-wrapper</code> . The top navbar is optional, and just for demonstration. Just create an element with the <code>#sidebarToggle</code> ID which will toggle the menu when clicked. </p>
+                    <p>
+                        <hr style="color: red; width: 800px; height: 10pt;"></hr>
+                    </p>
+                    <br>
+                        <h1>Dados para CHAT com Web Message</h1>
+                            <form name="message">
+                                <input type="text" name="firstname" id="firstname" placeholder="Digite seu Primeiro Nome">
+                                <input type="text" name="lastname" id="lastname" placeholder="Digite seu Segundo Nome" >
+                                <input type="text" name="phoneuser" id="phoneuser" placeholder="Digite seu Telefone" >
+                                <input type="text" name="email" id="email" placeholder="Digite seu E-mail">
+                                <br>
+                                <button type="button" id="custom-launcher" onclick="toggleMessenger()">Custom Launcher Button</button>
+                            </form>
+                            
+                            <script type="text/javascript">
+                                    const customLauncher = document.getElementById('custom-launcher'); // Custom launcher button
+                                    let bMessengerOpened = false; // Initial status of Messenger: closed
+                            
+                                    // #1 Subscribe to the Messenger.ready event - Show custom launcher button when Messenger is ready
+                                    Genesys(
+                                    'subscribe',
+                                    'Messenger.ready',
+                                    (e) => (customLauncher.style.display = 'block')
+                                    );
+                            
+                                    // #2 Subscribe to the Messenger.opened event - Update the status of Messenger as opened
+                                    Genesys('subscribe', 'Messenger.opened', (e) => {
+                                    bMessengerOpened = true;
+                                    /*
+                                    Update your custom launcher button here indicating a Messenger opened state i.e. show a KeyboardArrowDownIcon
+                                    or hide your custom launcher button if you prefer not to indicate that Messenger is opened
+                                    */
+                                    customLauncher.style.display = 'none';
+                                    console.log(e);
+                                    });
+                            
+                                    // #3 Subscribe to the Messenger.closed event - Update the status of Messenger as closed
+                                    Genesys('subscribe', 'Messenger.closed', (e) => {
+                                    bMessengerOpened = false;
+                                    /*
+                                    Update your custom launcher button here indicating a Messenger closed state i.e. show a MessageIcon
+                                    or show your custom launcher button if you prefer to indicate that Messenger is closed
+                                    */
+                                    customLauncher.style.display = 'block';
+                                    console.log(e);
+                                    });
+                            
+                                    const openMessenger = () => {
+                                    console.log('Opening messenger...');
+                                    Genesys('command', 'Messenger.open');
+                                    };
+                                    const closeMessenger = () => {
+                                    console.log('Closing messenger...');
+                                    Genesys('command', 'Messenger.close');
+                                    };
+                            
+                                    const toggleMessenger = () => {
+                                    bMessengerOpened ? closeMessenger() : openMessenger();
+                                    };
+                            </script>
+
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="scripts.js"></script>
+    </body>
 </html>
