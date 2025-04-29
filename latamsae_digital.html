@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-
-      <script type="text/javascript" charset="utf-8">
-        (function (g, e, n, es, ys) {
-          g['_genesysJs'] = e;
-          g[e] = g[e] || function () {
-            (g[e].q = g[e].q || []).push(arguments)
-          };
-          g[e].t = 1 * new Date();
-          g[e].c = es;
-          ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-        })(window, 'Genesys', 'https://apps.sae1.pure.cloud/genesys-bootstrap/genesys.min.js', {
-          environment: 'prod-sae1',
-          deploymentId: '700a38db-3594-4f0f-a232-7f99a4a5e849'
-        });
-      </script>
-    
-    <meta charset="utf-8" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
         <meta name="description" content="Cioti - Latam SAE Digital" />
         <meta name="author" content="Danniel Cioti" />
@@ -30,6 +14,34 @@
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="styles.css" rel="stylesheet" />
+
+        <!-- Web Messenger SNIPPET -->
+        <script type="text/javascript" charset="utf-8">
+            (function (g, e, n, es, ys) {
+            g['_genesysJs'] = e;
+            g[e] = g[e] || function () {
+                (g[e].q = g[e].q || []).push(arguments)
+            };
+            g[e].t = 1 * new Date();
+            g[e].c = es;
+            ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+            })(window, 'Genesys', 'https://apps.sae1.pure.cloud/genesys-bootstrap/genesys.min.js', {
+            environment: 'prod-sae1',
+            deploymentId: '700a38db-3594-4f0f-a232-7f99a4a5e849'
+            });
+        </script>
+        
+        <!-- Custom Attributes -->
+        <script>
+            Genesys("command", "Database.set", {
+                messaging: {
+                    customAttributes: {
+                        CPFCNPJ: "12312312387", //deverá ser substituido por variável interna com esta informação
+                        NOMECLIENTE: "Hands Over" //deverá ser substituido por variável interna com esta informação
+                    }
+                }
+            });
+        </script>
 
     </head>
     <body>
