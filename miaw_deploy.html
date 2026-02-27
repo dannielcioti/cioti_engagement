@@ -48,13 +48,6 @@
     </head>
     <body>
 
-        {
-        "OrganizationId": "00DgK000002GBUg",
-        "DeveloperName": "Miaw_Web_Deployment",
-        "Url": "https://orgfarm-db83e790c1-dev-ed.develop.my.salesforce-scrt.com"
-        }
-
-
         <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFFWHLWQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -232,5 +225,27 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="scripts.js"></script>
+
+     <!-- START DEPLOY MIAW SF COM CX CLOUD -->
+        <!-- 1) Carrega o bootstrap do Embedded Messaging do seu host "scrt" -->
+            <script
+                type="text/javascript"
+                src="https://orgfarm-db83e790c1-dev-ed.develop.my.salesforce-scrt.com/embeddedservice/embeddedservice_bootstrap.js">
+            </script>
+        
+        <!-- 2) Inicializa usando OrganizationId + DeveloperName -->
+            <script>
+                window.addEventListener("load", function () {
+                    // Alguns ambientes expõem como embeddedservice_bootstrap
+                    // Se der erro de "undefined", eu te passo a var correta olhando o console.
+                    embeddedservice_bootstrap.init(
+                    "00DgK000002GBUg",          // OrganizationId
+                    "Miaw_Web_Deployment",       // DeveloperName do Deployment
+                    "https://orgfarm-db83e790c1-dev-ed.develop.my.salesforce-scrt.com" // Url (host)
+                    );
+                });
+            </script>
+    <!-- FIM DEPLOY MIAW SF COM CX CLOUD -->
+    
     </body>
 </html>
